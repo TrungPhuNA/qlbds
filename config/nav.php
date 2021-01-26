@@ -12,9 +12,17 @@ return [
         'name' => 'Trang chủ',
         'route' => 'get.home'
     ],
+//    [
+//        'name' => 'Import Data',
+//        'route' => 'get.import_data'
+//    ],
     [
-        'name' => 'Import Data',
-        'route' => 'get.import_data'
+        'name' => 'Ql Tài khoản',
+        'route' => 'get.admin.index'
+    ],
+    [
+        'name' => 'Ql Đơn Hàng',
+        'route' => 'get.order_manage.index'
     ],
 
 ];

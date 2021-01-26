@@ -24,12 +24,11 @@ class LoginController extends Controller
     public function postLogin(AdminLoginRequest $request)
     {
         $credentials = $request->only('email', 'password');
-
         if (\Auth::guard('admins')->attempt($credentials)) {
             return redirect()->route('get.home');
         }
 
-        return  redirect()->back();
+        return redirect()->back();
     }
 
     /**

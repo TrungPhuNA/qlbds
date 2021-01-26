@@ -7,6 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="https://getbootstrap.com/docs/4.0/assets/img/favicons/favicon.ico">
     <title>TrungPhuNA</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link href="{{ mix('css/home.css') }}" rel="stylesheet">
 </head>

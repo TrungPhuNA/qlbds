@@ -18,6 +18,7 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
                     <a class="dropdown-item" href="{{ route('get.update.profile', get_data_user('admins')) }}">Cập nhật thông tin</a>
+                    <a class="dropdown-item" href="{{ route('get.import_data') }}">Import Data</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="{{ route('get.logout') }}">Thoát</a>
                 </div>

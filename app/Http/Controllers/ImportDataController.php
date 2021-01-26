@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\OrderManageImportExcel;
 use App\Imports\UserImportExcel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class ImportDataController extends Controller
 {
@@ -18,6 +20,7 @@ class ImportDataController extends Controller
 
     public function processImport(Request $request)
     {
-        \Excel::import(new UserImportExcel(), request()->file('file'));
+        \Excel::import(new OrderManageImportExcel(), request()->file('file'));
+//        \Excel::import(new UserImportExcel(), request()->file('file'));
     }
 }

@@ -24,4 +24,18 @@ Route::middleware('checkLoginAdmin')->group(function (){
 
     Route::get('/profile/{id}/update','UpdateInfoController@edit')->name('get.update.profile');
     Route::post('/profile/{id}/update','UpdateInfoController@update');
+
+    Route::group(['prefix' => 'order-manage'], function (){
+        Route::get('/','OrderManageController@index')->name('get.order_manage.index');
+//        Route::get('/guest','OrderManageController@guest')->name('get.order_manage.index');
+    });
+
+    Route::group(['prefix' => 'admin'], function(){
+        Route::get('/','AdminController@index')->name('get.admin.index');
+        Route::get('create','AdminController@create')->name('get.admin.create');
+        Route::post('create','AdminController@store');
+
+        Route::get('update/{id}','AdminController@edit')->name('get.admin.update');
+        Route::post('update/{id}','AdminController@update');
+    });
 });
