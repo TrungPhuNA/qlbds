@@ -1,0 +1,172 @@
+$white: #fff;
+$pink: #fb236a;
+$pink-dark: #e11f5f;
+$purple: #48509a;
+$purple-dark: #40488a;
+$gray: #f6f7f9;
+$gray-dark: #dddee0;
+$blue: #4688FF;
+$blue-dark: #1474f2;
+$green: #48a747;
+$green-dark: #48a747;
+
+//==========Button có hover==========//
+$btn-colors: () !default;
+$btn-colors: (//background, color | Hover tg tự
+    "btn-pink": ($pink, $white),
+    "btn-purple": ($purple, $white),
+    "btn-gray": ($gray, #666),
+    "btn-blue": ($blue, $white),
+    "btn-white": ($white, $blue),
+    "btn-green": ($green, $white),
+);
+//==========Button outline hover==========//
+$btn-color-outlines: () !default;
+$btn-color-outlines: map-merge(
+        (//color-main, color-text
+            "btn-pink": ($pink, $white),
+            "btn-purple": ($purple, $white),
+            "btn-gray": ($gray, $white),
+            "btn-white": (#666, #ddd),
+        ),
+        $btn-color-outlines
+);
+.btn {
+    position: relative;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 45px;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: .3px;
+    line-height: 20px;
+    padding: .45rem .95rem;
+    outline: none;
+    text-align: center;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    vertical-align: middle;
+    white-space: nowrap;
+    transform: translateZ(0);
+    &:before {
+        transform: scaleX(0);
+        content: "";
+        border-radius: 45px;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, .04);
+        transform-origin: 50%;
+        transition: all .5s ease-out;
+    }
+    &:hover {
+        &:before {
+            transform: scaleX(1);
+        }
+    }
+    &-block {
+        width: 100%;
+    }
+    &-square{
+        border-radius: 3px;
+    }
+    &:not(:first-of-type) {
+        margin-left: 5px;
+    }
+    &-xs {
+        font-size: 11px;
+        padding: 0.1rem 0.5rem;
+        border-radius: 3px;
+        &:before{
+            border-radius: 3px;
+        }
+    }
+    &-sm {
+        font-size: 13px;
+        padding: 0.25rem 0.75rem;
+    }
+    &-md {
+        font-size: 18px;
+        height: 50px;
+        line-height: 50px;
+        padding: 0 30px;
+    }
+    &-lg {
+        font-size: 21px;
+        height: 59px;
+        line-height: 59px;
+        padding: 0 56px;
+    }
+    &-xl {
+        font-size: 28px;
+        height: 74px;
+        line-height: 74px;
+        padding: 0 80px;
+        text-transform: uppercase;
+    }
+}
+
+@each $color, $value in $btn-colors {
+    $btn-bg-c: nth($value, 1); //background
+    $btn-co-c: nth($value, 2); //color
+    .#{$color} {
+        background: #{$btn-bg-c};
+        border-color: #{$btn-bg-c};
+        color: #{$btn-co-c} !important;
+    }
+}
+
+//@each $color, $value in $btn-color-outlines {
+//    $color_main: nth($value, 1); //color-main
+//    $color_text: nth($value, 2); //color-text
+//
+//    .#{$color}-outline {
+//        background: $white;
+//        color: #{$color_main} !important;
+//        border: 2px solid #{$color_main} !important;
+//        &:hover {
+//            text-decoration: none;
+//            background: #{$color_main};
+//            color: #{$color_text} !important;
+//        }
+//    }
+//}
+
+@media (max-width: 767px) {
+    .btn {
+        &-md {
+            font-size: 18px;
+            height: 54px;
+            line-height: 54px;
+            padding: 0 40px;
+        }
+        &-lg {
+            height: 58px;
+            font-size: 20px;
+            line-height: 58px;
+            padding: 0 50px;
+        }
+    }
+}
+//Danh sach viec lam
+.btn-border{
+    border: 1px solid #dedede !important;
+    padding: 0 5px;
+    border-radius: 3px;
+    white-space: nowrap;
+    display: inline-block;
+    &.blue{
+        color: $blue;
+    }
+    &.pink{
+        color: #fb226a;
+    }
+    &.blocked{
+        pointer-events: none;
+        color: #ccc;
+    }
+}

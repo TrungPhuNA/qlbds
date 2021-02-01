@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('login','LoginController@login')->name('get.login');
 Route::get('logout','LoginController@logout')->name('get.logout');
 Route::post('login','LoginController@postLogin');
+Route::get('home','HomeController@index')->name('get.home');
+Route::get('/','HomeController@index')->name('get.home');
 Route::middleware('checkLoginAdmin')->group(function (){
-    Route::get('home','HomeController@index')->name('get.home');
-    Route::get('/','HomeController@index')->name('get.home');
     Route::get('import-data','ImportDataController@formImport')->name('get.import_data');
     Route::post('import-data','ImportDataController@processImport');
 
@@ -27,7 +27,6 @@ Route::middleware('checkLoginAdmin')->group(function (){
 
     Route::group(['prefix' => 'order-manage'], function (){
         Route::get('/','OrderManageController@index')->name('get.order_manage.index');
-//        Route::get('/guest','OrderManageController@guest')->name('get.order_manage.index');
     });
 
     Route::group(['prefix' => 'admin'], function(){

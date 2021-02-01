@@ -7,7 +7,7 @@ var Home = {
         this.runLocation()
         this.processImportData()
         this.runToken()
-        this.runDataTable()
+        // this.runDataTable()
     },
 
     runDataTable() {
@@ -15,7 +15,20 @@ var Home = {
         if ($table.length) {
             $table.DataTable({
                 responsive: true,
-                select: true
+                select: true,
+                bSort: true,
+                processing: true,
+                serverSide: true,
+                ajax: {
+                    url: "http://hethongql.local/order-manage",
+                    type: "GET"
+                },
+                columns: [
+                    { data: 'om_name',name : 'om_name' },
+                    { data: 'om_phone', name : 'om_phone' },
+                    { data: 'om_receiver_address', name : 'om_receiver_address' },
+                    { data: 'om_receiver_province_address', name : 'om_receiver_province_address' },
+                ]
             });
         }
     },

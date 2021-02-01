@@ -1,0 +1,58 @@
+.home-wrapper
+{
+    .banner {
+        padding: 68px 0 318px;
+        overflow: hidden;
+        position: relative;
+        h2 {
+            margin: 0 0 30px;
+            padding: 0 0 25px;
+            font-weight: 300;
+            color: #363636;
+            font-size: 46px;
+            line-height: 1.2;
+            position: relative;
+        }
+        h3 {
+            font-size: 22px;
+            color: #3a3a3a;
+            font-weight: 300;
+            margin-bottom: 40px;
+            line-height: 1.2;
+        }
+        a.btn-registration {
+            font-size: 28px;
+            line-height: 74px;
+            font-weight: bold;
+            height: 74px;
+            padding: 0 50px;
+            position: relative;
+            z-index: 2;
+            background-image: -moz-linear-gradient(33deg,#2ad38b 0%,#0cceb0 100%);
+            background-image: -webkit-linear-gradient(
+                    33deg
+                ,#2ad38b 0%,#0cceb0 100%);
+            background-image: -ms-linear-gradient(33deg,#2ad38b 0%,#0cceb0 100%);
+            box-shadow: 0 2px 29.12px 2.88px rgb(0 0 0 / 14%);
+            color: #fff;
+            background: #2ad38b;
+            background: linear-gradient(to right,#2ad38b,#0cceb0);
+            border-radius: 45px;
+            display: inline-block;
+            outline: none;
+            -webkit-user-select: none;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            white-space: nowrap;
+            -webkit-transition: all .5s ease;
+            -moz-transition: all .5s ease;
+            transition: all .5s ease;
+        }
+    }
+    .banner.bg-tet
+    {
+        background: url(https://3.bp.blogspot.com/-2IPOZ0MqrX0/Xl_V2qi6x8I/AAAAAAAAA-o/eNbyleH66AY_DepVh8fh68h9ES0XZLJ7QCLcBGAsYHQ/s1600/bg-banner-tet.jpg) no-repeat center top #f3fbfe;
+    }
+}

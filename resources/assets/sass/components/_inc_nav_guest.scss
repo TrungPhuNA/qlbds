@@ -1,0 +1,91 @@
+.header {
+    z-index: 30;
+    position: relative;
+    background-size: cover;
+    background-position: 50% 0;
+    transition: background-color .3s, opacity .3s;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    height: 90px;
+    box-shadow: 1px 1px 10px rgb(0 0 0 / 15%);
+    &-flex {
+        display: flex;
+    }
+
+    .logo {
+        //flex: 1;
+        width: 200px;
+        margin-right: 20px;
+
+        a {
+            text-decoration: none;
+            display: block;
+            color: #446084;
+            text-transform: uppercase;
+            font-weight: bolder;
+            margin: 0;
+            position: relative;
+
+            img {
+                max-width: 100%;
+                max-height: 90px;
+            }
+
+            &:before {
+                left: -5%;
+                animation: light-left 3s infinite alternate linear;
+                content: "";
+                position: absolute;
+                top: 0;
+                width: 10px;
+                height: 110px;
+                transform: translateY(-50%);
+                background-color: rgba(255, 255, 255, .75);
+            }
+
+            &:after {
+                right: -5%;
+                animation: light-right 3s infinite alternate linear;
+                content: "";
+                position: absolute;
+                top: 0;
+                width: 10px;
+                height: 110px;
+                transform: translateY(-50%);
+                background-color: rgba(255, 255, 255, .75);
+            }
+        }
+    }
+
+    ul {
+        display: flex;
+        align-items: center;
+
+        li {
+            display: inline-block;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            margin: 0 7px;
+            transition: background-color .3s;
+
+            a {
+                font-weight: 700;
+            }
+        }
+    }
+}
+.sticky-header{
+    position: fixed;
+    top: 0;
+    width: 100%
+}

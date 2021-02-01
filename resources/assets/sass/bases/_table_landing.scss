@@ -1,0 +1,298 @@
+//
+// Basic Bootstrap table
+//
+
+.table {
+    width: 100%;
+    //margin-bottom: 1rem;
+    color: #212529;
+    tr th{
+        font-weight: 500;
+    }
+    th,
+    td {
+        padding: .75rem;
+        vertical-align: top;
+        border-top: 1px solid #dedede;
+    }
+
+    thead th {
+        vertical-align: bottom;
+        border-bottom: (2 * 1px) solid #dedede;
+    }
+
+    tbody + tbody {
+        border-top: (2 * 1px) solid #dedede;
+    }
+    &.table-dashed {
+        th {
+            border-top: 0;
+            border-bottom: 0;
+            font-weight: 500;
+        }
+        td {
+            border-top: 1px dashed #dedede;
+        }
+    }
+    tr.disable {
+        pointer-events: none;
+        opacity: 0.3;
+    }
+}
+
+//
+// Condensed table w/ half padding
+//
+
+.table-sm {
+    th,
+    td {
+        padding: .3rem;
+    }
+}
+
+// Border versions
+//
+// Add or remove borders all around the table and between all the columns.
+
+.table-bordered {
+    border: 1px solid #dedede;
+
+    th,
+    td {
+        border: 1px solid #dedede;
+    }
+
+    thead {
+        th,
+        td {
+            border-bottom-width: 2 * 1px;
+        }
+    }
+}
+
+.table-borderless {
+    th,
+    td,
+    thead th,
+    tbody + tbody {
+        border: 0;
+    }
+}
+
+// Zebra-striping
+//
+// Default zebra-stripe styles (alternating gray and transparent backgrounds)
+
+.table-striped {
+    tbody tr:nth-of-type(odd) {
+        background-color: rgba(#000, .05);
+    }
+}
+
+// Hover effect
+//
+// Placed here since it has to come after the potential zebra striping
+@mixin hover() {
+    &:hover {
+        @content;
+    }
+}
+
+.table-hover {
+    tbody tr {
+        @include hover() {
+            color: #212529;
+            background-color: rgba(#000, .05);
+        }
+    }
+}
+
+//// Table backgrounds
+////
+//// Exact selectors below required to override `.table-striped` and prevent
+//// inheritance to nested tables.
+//$blue: #007bff !default;
+//$green: #28a745 !default;
+//$red: #dc3545 !default;
+//$orange: #fd7e14 !default;
+//$yellow: #ffc107 !default;
+//$light: #f8f9fa !default;
+//$dark: #343a40 !default;
+//$theme-colors: () !default;
+//// stylelint-disable-next-line scss/dollar-variable-default
+//$theme-colors: map-merge(
+//        (
+//            "blue": $blue,
+//            "green": $green,
+//            "orange": $orange,
+//            "yellow": $yellow,
+//            "red": $red,
+//            "light": $light,
+//            "dark": $dark
+//        ),
+//        $theme-colors
+//);
+//@mixin table-row-variant($state, $background, $border: null) {
+//    // Exact selectors below required to override `.table-striped` and prevent
+//    // inheritance to nested tables.
+//    .table-#{$state} {
+//        &,
+//        > th,
+//        > td {
+//            background-color: $background;
+//        }
+//
+//        @if $border != null {
+//            th,
+//            td,
+//            thead th,
+//            tbody + tbody {
+//                border-color: $border;
+//            }
+//        }
+//    }
+//
+//    // Hover states for `.table-hover`
+//    // Note: this is not available for cells or rows within `thead` or `tfoot`.
+//    .table-hover {
+//        $hover-background: darken($background, 5%);
+//
+//        .table-#{$state} {
+//            @include hover() {
+//                background-color: $hover-background;
+//
+//                > td,
+//                > th {
+//                    background-color: $hover-background;
+//                }
+//            }
+//        }
+//    }
+//}
+//
+//@function theme-color($key: "primary") {
+//    @return map-get($theme-colors, $key);
+//}
+//
+//@function theme-color-level($color-name: "primary", $level: 0) {
+//    $color: theme-color($color-name);
+//    $color-base: if($level > 0, #000, #fff);
+//    $level: abs($level);
+//
+//    @return mix($color-base, $color, $level * 8%);
+//}
+//
+//@each $color, $value in $theme-colors {
+//    @include table-row-variant($color, theme-color-level($color, -9), theme-color-level($color, -6));
+//}
+//
+//@include table-row-variant(active, rgba(#000, .05));
+
+//REponse web
+@function breakpoint-next($name, $breakpoints: $grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
+    $n: index($breakpoint-names, $name);
+    @return if($n != null and $n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+}
+
+@function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
+    @return if(breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");
+}
+
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+    $min: map-get($breakpoints, $name);
+    @return if($min != 0, $min, null);
+}
+
+@mixin media-breakpoint-down($name, $breakpoints: $grid-breakpoints) {
+    $max: breakpoint-max($name, $breakpoints);
+    @if $max {
+        @media (max-width: $max) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+@function breakpoint-max($name, $breakpoints: $grid-breakpoints) {
+    $next: breakpoint-next($name, $breakpoints);
+    @return if($next, breakpoint-min($next, $breakpoints) - .02, null);
+}
+
+.table-responsive {
+    @each $breakpoint in map-keys($grid-breakpoints) {
+        $next: breakpoint-next($breakpoint, $grid-breakpoints);
+        $infix: breakpoint-infix($next, $grid-breakpoints);
+
+        &#{$infix} {
+            @include media-breakpoint-down($breakpoint) {
+                display: block;
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+
+                // Prevent double border on horizontal scroll due to use of `display: block;`
+                > .table-bordered {
+                    border: 0;
+                }
+            }
+        }
+    }
+}
+
+.table-blue {
+    thead {
+        tr {
+            background-color: #016ecb;
+            color: #fff;
+            font-weight: 500;
+        }
+    }
+    ul {
+        > li a {
+            color: #016ecb;
+        }
+    }
+}
+$colors: (
+    "green" : "#3faf3c",
+    "light-blue" : "#4680ff",
+    "orange" : "#ffb64d",
+    "red" : "#e63327",
+);
+.table {
+    td {
+        p {
+            margin-bottom: 0;
+        }
+    }
+}
+.icon-stt {
+    display: block;
+    &.text-right {
+        text-align: right;
+    }
+    &.icon-before{
+        &:before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 5px;
+        }
+        @each $name, $color in $colors {
+            &.#{$name} {
+                &:before {
+                    background: #{$color};
+                }
+            }
+        }
+    }
+    @each $name, $color in $colors {
+        .#{$name} {
+            color: #{$color};
+        }
+    }
+}

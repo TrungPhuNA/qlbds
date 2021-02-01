@@ -7,14 +7,20 @@ use Illuminate\Http\Request;
 
 class OrderManageController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $orders   = OrderManagement::orderByDesc('id')->paginate(20);
+        $ordersManage = OrderManagement::orderByDesc('id')
+            ->paginate(5);
 
         $viewData = [
-            'orders' => $orders
+            'ordersManage' => $ordersManage
         ];
 
         return view('pages.order_manage.index', $viewData);
+    }
+
+    public function callDataOrderManage()
+    {
+
     }
 }

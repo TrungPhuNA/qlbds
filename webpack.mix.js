@@ -12,8 +12,10 @@ const mix = require('laravel-mix');
  */
 
 mix.sass('resources/assets/sass/pages/home.scss', 'public/css');
+mix.sass('resources/assets/sass/pages/guest.scss', 'public/css');
 mix.sass('resources/assets/sass/pages/login.scss', 'public/css');
 mix.js('resources/assets/js/pages/home.js', 'public/js');
+mix.js('resources/assets/js/pages/guest.js', 'public/js');
 
 // mix.autoload({
 //     jquery: ['$', 'window.jQuery']
