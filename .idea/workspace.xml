@@ -23,11 +23,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37dad125-8273-4a1c-851d-dffad6b2ad9d" name="Default Changelist" comment="add partner">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/guest.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/guest.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/sass/pages/guest.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/sass/pages/guest.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/_inc_nav_guest.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/_inc_nav_guest.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app_guest.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app_guest.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/home/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -203,7 +198,7 @@
       <workItem from="1612151220399" duration="2289000" />
       <workItem from="1612185622318" duration="697000" />
       <workItem from="1612325343549" duration="3867000" />
-      <workItem from="1612339218972" duration="2300000" />
+      <workItem from="1612339218972" duration="2506000" />
     </task>
     <task id="LOCAL-00001" summary="add partner">
       <created>1612337270869</created>

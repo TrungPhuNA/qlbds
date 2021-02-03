@@ -3,11 +3,11 @@
     <div class="home-wrapper">
         <div class="banner bg-tet text-center">
             <div class="container">
-                <h2>Customer service information support center, Connecting more than 1000 stores across the Philippines</h2>
+                <h2>Connecting more than 1000 stores across the Philippines</h2>
                 <br class="d-none d-lg-block">
-                <h3>Connecting more than 1000 stores across the Philippines</h3>
-                <p>Goods Inspection - Wrapping - Shipping, the safest and most standard procedure in the market</p>
-                <p>Easily search for orders by phone number and store name</p>
+                <h3>Goods Inspection - Wrapping - Shipping, the safest and most standard procedure in the market</h3>
+{{--                <p></p>--}}
+{{--                <p>Easily search for orders by phone number and store name</p>--}}
                 <a class="btn-registration js-scroll-page" data-id="#search_order_manage" href=""  title="template blogspot">CHECK THE STATUS OF ORDER</a>
             </div>
         </div>
