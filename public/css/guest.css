@@ -2260,7 +2260,7 @@ footer .social .youtube {
   background: url(https://3.bp.blogspot.com/-2IPOZ0MqrX0/Xl_V2qi6x8I/AAAAAAAAA-o/eNbyleH66AY_DepVh8fh68h9ES0XZLJ7QCLcBGAsYHQ/s1600/bg-banner-tet.jpg) no-repeat center top #f3fbfe;
 }
 
-.section-home .title-h2 {
+.title-h2 {
   font-size: 38px;
   color: #4267b2;
   line-height: 46px;
@@ -2269,6 +2269,7 @@ footer .social .youtube {
   text-align: center;
   padding: 20px;
 }
+
 .section-home p.font-p {
   color: #88889b;
   font-size: 15px;
@@ -2374,4 +2375,23 @@ footer .social .youtube {
   font-weight: 500;
   margin-bottom: 15px;
   text-align: center;
+}
+
+#partner {
+  padding: 20px;
+}
+#partner .lists {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#partner .lists .item {
+  display: inline-block;
+}
+#partner .lists .item img {
+  max-width: 100%;
+  width: 120px;
+  height: 50px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }

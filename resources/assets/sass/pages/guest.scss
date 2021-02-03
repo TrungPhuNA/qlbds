@@ -5,16 +5,17 @@
 @import "../components/inc_nav_guest";
 @import "../components/inc_footer_guest";
 @import "include/inc_banner";
+//@import "~owl.carousel";
+.title-h2 {
+    font-size: 38px;
+    color: #4267b2;
+    line-height: 46px;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    padding: 20px;
+}
 .section-home {
-    .title-h2 {
-        font-size: 38px;
-        color: #4267b2;
-        line-height: 46px;
-        font-weight: 300;
-        font-family: 'Open Sans',sans-serif;
-        text-align: center;
-        padding: 20px;
-    }
     p.font-p {
         color: #88889b;
         font-size: 15px;
@@ -23,18 +24,23 @@
         margin-bottom: 60px;
         text-align: center;
     }
+
     .lists {
         display: flex;
+
         &-item {
             width: 50%;
+
             .img-width {
                 width: 400px;
                 max-width: 100%;
                 height: auto;
             }
+
             .icon-block {
                 display: block;
                 margin-bottom: 35px;
+
                 i {
                     width: 70px;
                     float: left;
@@ -47,16 +53,19 @@
                     background: #E2E2ED;
                     color: #4B456F;
                 }
+
                 h3 {
                     font-weight: 600;
                     text-transform: uppercase;
                     font-size: 18px;
                     color: #4267b2;
                 }
+
                 p {
                     font-weight: 400;
                 }
             }
+
             .icon-info {
                 overflow: hidden;
                 padding-left: 15px;
@@ -64,18 +73,22 @@
         }
     }
 }
+
 .become-form {
     background-image: url(/images/bg_building.png);
     background-size: cover;
     background-position: 50%;
     background-repeat: no-repeat;
     padding: 20px;
+
     .content {
         display: flex;
     }
+
     .left {
         flex: 0 0 50%;
         padding-right: 35px;
+
         .apply-realtime {
             background: #fff;
             display: flex;
@@ -84,10 +97,11 @@
             border-radius: 5px;
             width: 80%;
             margin: 0 auto;
-            &:not(:last-child)
-            {
+
+            &:not(:last-child) {
                 margin-bottom: 20px;
             }
+
             .avatar {
                 height: 40px;
                 width: 40px;
@@ -96,33 +110,56 @@
                 overflow: hidden;
                 border-radius: 50%;
             }
+
             .info {
-               .name {
-                  b{
-                      color: #1f7aff;
-                  }
-                   span {
-                       color: #888;
-                       font-weight: 300;
-                       font-style: italic;
-                       font-size: 13px;
-                   }
-                   p {
-                       color: #999;
-                       font-size: 13px;
-                   }
-               }
+                .name {
+                    b {
+                        color: #1f7aff;
+                    }
+
+                    span {
+                        color: #888;
+                        font-weight: 300;
+                        font-style: italic;
+                        font-size: 13px;
+                    }
+
+                    p {
+                        color: #999;
+                        font-size: 13px;
+                    }
+                }
             }
         }
     }
+
     .right {
         padding-left: 35px;
         flex: 0 0 50%;
+
         h3 {
             font-size: 24px;
             font-weight: 500;
             margin-bottom: 15px;
             text-align: center;
+        }
+    }
+}
+
+#partner {
+    padding: 20px;
+    .lists {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .item {
+            display: inline-block;
+            img {
+                max-width: 100%;
+                width: 120px;
+                height: 50px;
+                object-fit: contain;
+            }
         }
     }
 }

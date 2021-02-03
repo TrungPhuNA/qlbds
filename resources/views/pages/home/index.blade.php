@@ -100,4 +100,30 @@
             </div>
         </div>
     </section>
+    <section class="partner" id="partner">
+        <div class="container" id="init-partner">
+            <h2 class="title-h2">Đối tác của chúng tôi</h2>
+            <div class="lists">
+                <a href="" class="item">
+                    <img src="https://theme.hstatic.net/1000376681/1000665239/14/logo_partner6.png?v=146" alt="">
+                </a>
+                <a href="" class="item">
+                    <img src="https://theme.hstatic.net/1000376681/1000665239/14/logo_partner7.png?v=146" alt="">
+                </a>
+                <a href="" class="item">
+                    <img src="https://s2-recruiting.cdn.greenhouse.io/external_greenhouse_job_boards/logos/400/380/700/original/New_Z_Logo.png?1575000402" alt="">
+                </a>
+                <a href="" class="item">
+                    <img src="https://www.rvsolutions.in/wp-content/uploads/2019/04/real-me-logo-750x232.png" alt="">
+                </a>
+                <a href="" class="item">
+                    <img src="https://cdn.tgdd.vn/Files/2019/03/12/1154295/new-oppo-logo_600x173.png" alt="">
+                </a>
+                <a href="" class="item">
+                    <img src="https://theme.hstatic.net/1000376681/1000665239/14/logo_partner1.png?v=146" alt="">
+{{--                    <img src="https://res-5.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/9ee514e66a142525e258" alt="">--}}
+                </a>
+            </div>
+        </div>
+    </section>
 @stop
