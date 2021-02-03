@@ -10,7 +10,7 @@
             <li><a href="" class="js-scroll-page" data-id="#search_order_manage">Search</a></li>
             <li><a href="" class="js-scroll-page" data-id="#about">About Us</a></li>
             <li><a href="" class="js-scroll-page" data-id="#claim">Claim</a></li>
-            <li><a href="" class="js-scroll-page" data-id="#contact">Contact</a></li>
+            <li><a href="" class="js-scroll-page" data-id="#contact-phone">Contact</a></li>
         </ul>
     </div>
 </div>
