@@ -1,6 +1,8 @@
+import 'select2'
 var GuestHome = {
     init : function (){
         this.scrollTopLink()
+        this.initSelect2ShopName()
     },
 
     scrollTopLink()
@@ -13,6 +15,12 @@ var GuestHome = {
                 scrollTop: $($idBox).offset().top  - 100
             }, 500);
         })
+    },
+
+    initSelect2ShopName() {
+        $('.js-example-basic-single').select2({
+            tags: true
+        });
     }
 }
 

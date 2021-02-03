@@ -1,0 +1,29 @@
+footer {
+    padding: 10px;
+    text-align: center;
+    .title {
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    .social
+    {
+        a {
+            display: inline-block;
+            margin-right: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            color: white;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+        }
+        .facebook {
+            background: #3B5998;
+        }
+        .youtube {
+            background-color: #bb0000;
+        }
+    }
+}

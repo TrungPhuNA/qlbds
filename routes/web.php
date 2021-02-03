@@ -28,6 +28,9 @@ Route::middleware('checkLoginAdmin')->group(function (){
     Route::group(['prefix' => 'order-manage'], function (){
         Route::get('/','OrderManageController@index')->name('get.order_manage.index');
     });
+    Route::group(['prefix' => 'estate'], function (){
+        Route::get('/','EstateController@index')->name('get.estate.index');
+    });
 
     Route::group(['prefix' => 'admin'], function(){
         Route::get('/','AdminController@index')->name('get.admin.index');

@@ -1,6 +1,9 @@
 // Base
+@import "../components/inc_select2";
+@import "~select2";
 @import "./../bases/common";
 @import "../components/inc_nav_guest";
+@import "../components/inc_footer_guest";
 @import "include/inc_banner";
 .section-home {
     .title-h2 {
