@@ -1,12 +1,12 @@
 import 'select2'
 import 'owl.carousel'
-import 'jquery-validation'
+// import 'jquery-validation'
 
 var GuestHome = {
     init: function () {
         this.scrollTopLink()
         this.initSelect2ShopName()
-        this.processOrderManage()
+        // this.processOrderManage()
     },
 
     scrollTopLink() {
