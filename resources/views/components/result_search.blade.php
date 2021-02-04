@@ -12,19 +12,32 @@
     <table class="table table-striped">
         <thead>
         <tr>
-            <th scope="col">AWB</th>
+            <th scope="col">Awb</th>
             <th scope="col">Name</th>
-            <th scope="col">Price</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Receiver Address</th>
+            <th scope="col">Receiver Province</th>
+            <th scope="col">Receiver City</th>
+            <th scope="col">Receiver barangay</th>
+            <th scope="col">Product Description</th>
+            <th scope="col">COD Amount</th>
+            <th scope="col">Name Shop</th>
             <th scope="col" class="text-center">Status</th>
         </tr>
         </thead>
         <tbody>
             @if(isset($order) && $order)
                 <tr>
-                    <td scope="row" style="text-align: center;position:relative;" data-tooltip="Click để xem chi tiết"
-                        class="css-tooltip"><a href="#">{{ $order->om_awb }}</a></td>
-                    <td style="text-align: center">{{ $order->om_name }}</td>
-                    <td style="text-align: center">{{ $order->om_price }}</td>
+                    <th scope="row">{{ $order->om_awb }}</th>
+                    <td>{{ $order->om_name }}</td>
+                    <td>{{ $order->om_phone }}</td>
+                    <td>{{ $order->om_receiver_address }}</td>
+                    <td>{{ $order->om_receiver_province_address }}</td>
+                    <td>{{ $order->om_receiver_city_address }}</td>
+                    <td>{{ $order->om_receiver_barangay }}</td>
+                    <td>{{ $order->om_product_description }}</td>
+                    <td>{{ $order->om_price }}</td>
+                    <td>{{ $order->om_name_shop }}</td>
                     <td style="text-align: center">
                         <span class="c-primary"> {{ $order->getStatus($order->om_status)['name'] }} </span>
                     </td>

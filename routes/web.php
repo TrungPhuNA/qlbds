@@ -18,6 +18,8 @@ Route::get('logout','LoginController@logout')->name('get.logout');
 Route::post('login','LoginController@postLogin');
 Route::get('home','HomeController@index')->name('get.home');
 Route::get('/','HomeController@index')->name('get.home');
+Route::get('search-order-manage','SearchOrderManageController@index')
+    ->name('get_search.order_manage');
 Route::post('search-order-manage','SearchOrderManageController@searchOrderManage')
     ->name('post_ajax.order_manage');
 

@@ -103,54 +103,7 @@
             </div>
         </div>
     </section>
-    <section class="become-form" id="search_order_manage">
-        <div class="container">
-            <div class="content">
-                <div class="left">
-                    <div class="apply-realtime">
-                        <div class="avatar"> <img class="image" src="/images/user_default_48x48.png" alt=""> </div>
-                        <div class="info">
-                            <div class="name"> <b>Nguyen Duc Anh</b> <span>- 9 phút trước</span> </div>
-                            <p>Vừa tìm kiếm đơn hàng</p>
-                        </div>
-                    </div>
-                    <div class="apply-realtime">
-                        <div class="avatar"> <img class="image" src="/images/user_default_48x48.png" alt=""> </div>
-                        <div class="info">
-                            <div class="name"> <b>Pham Huynh Vu</b> <span>- 10 phút trước</span> </div>
-                            <p>Vừa tìm kiếm đơn hàng</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="right landing-form">
-                    <h3>CHECK THE STATUS OF ORDER</h3>
-                    <form id="formOrderManage" novalidate="novalidate" action="" method="POST">
-                        @csrf
-                        <div class="form-group">
-                            <select name="name_shop" id="" class="js-example-basic-single">
-                                <option value="1">Click name shop</option>
-                                <option value="2">Name</option>
-                                <option value="3">Anh Em</option>
-                                <option value="4">Chào bạn</option>
-                                <option value="5">Trung Phú NA</option>
-                                <option value="6">Hi ok chào bạn</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="code"  required="required"> <label>Code</label>
-                            <p id="err-phone"></p>
-                        </div>
-                        <div class="text-center">
-                            <button class="btn btn-md btn-blue" type="submit">Search Order Manage<i class="la la-angle-right"></i> </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="container" id="result-order-manage">
-            @include('components._inc_loading_v1')
-        </div>
-    </section>
+    @include('components._inc_form_search')
     <section class="partner" id="partner">
         <div class="container" id="init-partner">
             <h2 class="title-h2">Affiliate partners</h2>

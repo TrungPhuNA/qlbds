@@ -45,21 +45,23 @@ var GuestHome = {
                 }
             },
             submitHandler: function (form) {
-                $.ajax({
-                    url: URL_SEARCH,
-                    method: "POST",
-                    beforeSend: function (xhr) {
-                        $(".js-loading-1").show()
-                    },
-                    data: $('#formOrderManage').serialize(),
-                    success: function (results) {
-                        $("#result-order-manage").html(results)
-                    },
-                    error: function (xhr) {
-                        console.log(xhr)
-                        $(".js-loading-1").hide()
-                    },
-                })
+                $("#formOrderManage").submit();
+
+                // $.ajax({
+                //     url: URL_SEARCH,
+                //     method: "POST",
+                //     beforeSend: function (xhr) {
+                //         $(".js-loading-1").show()
+                //     },
+                //     data: $('#formOrderManage').serialize(),
+                //     success: function (results) {
+                //         $("#result-order-manage").html(results)
+                //     },
+                //     error: function (xhr) {
+                //         console.log(xhr)
+                //         $(".js-loading-1").hide()
+                //     },
+                // })
             }
         });
     }
