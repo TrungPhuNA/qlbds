@@ -11,7 +11,12 @@ class SearchOrderManageController extends Controller
     public function index(Request $request)
     {
         $code      = $request->code;
-        $order     = OrderManagement::where('om_awb', $code)->first();
+        $order     = OrderManagement::where('om_awb', $code);
+        if($request->name_shop)
+            $order->where('om_shop_id', $request->name_shop);
+
+        $order = $order->first();
+
         $getStatus = (new OrderManagement())->setStatus;
 
         $viewData = [

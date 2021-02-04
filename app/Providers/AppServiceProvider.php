@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Shop;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
@@ -25,5 +26,13 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+        try{
+            $shopGlobal = Shop::all();
+        }catch (\Exception $exception)
+        {
+
+        }
+
+        \View::share('shopGlobal', $shopGlobal ?? []);
     }
 }

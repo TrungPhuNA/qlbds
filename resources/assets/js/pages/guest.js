@@ -29,17 +29,17 @@ var GuestHome = {
     processOrderManage() {
         $('#formOrderManage').validate({
             rules: {
-                name_shop: {
-                    required: true,
-                },
+                // name_shop: {
+                //     required: true,
+                // },
                 code: {
                     required: true,
                 },
             },
             messages: {
-                name_shop: {
-                    required: "Please put your name shop.",
-                },
+                // name_shop: {
+                //     required: "Please put your name shop.",
+                // },
                 code: {
                     required: "Please put your code.",
                 }

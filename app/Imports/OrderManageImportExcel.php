@@ -3,13 +3,17 @@
 namespace App\Imports;
 
 use App\Models\OrderManagement;
+use App\Models\Shop;
+use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Str;
 use Maatwebsite\Excel\Concerns\ToCollection;
 
 class OrderManageImportExcel implements ToCollection
 {
     protected $code = null;
+
     public function collection(Collection $rows)
     {
         foreach ($rows as $key => $row) {
@@ -21,13 +25,31 @@ class OrderManageImportExcel implements ToCollection
 
     protected function processOrderManage($orderManage)
     {
-        try{
+        try {
             $orderManage = $this->mapColumn($orderManage);
+            if ($orderManage['om_shop_id'] == 0) {
+                $orderManage['om_shop_id'] = $this->processShop($orderManage['om_name_shop']);
+            }
+
             OrderManagement::updateOrCreate($orderManage);
-        }catch (\Exception $exception)
-        {
+        } catch (\Exception $exception) {
             Log::error($exception->getMessage());
         }
+    }
+
+    protected function processShop($name)
+    {
+        if(!$name) return 0;
+
+        $slug = Str::slug($name);
+        $shop = Shop::where('s_slug', $slug)->first();
+        if ($shop) return $shop->id;
+
+        return Shop::insertGetId([
+            's_name'     => $name,
+            's_slug'     => $slug,
+            'created_at' => Carbon::now()
+        ]);
     }
 
     protected function setCode($orderManage)
@@ -50,6 +72,7 @@ class OrderManageImportExcel implements ToCollection
             'om_status_text'               => $orderManage[10],
             'om_awb'                       => $orderManage[8],
             'om_name_shop'                 => $orderManage[9],
+            'om_shop_id'                   => $orderManage[12] ?? 0,
             'om_admin_id'                  => 1,
         ];
     }

@@ -1,7 +1,7 @@
 <div class="header">
     <div class="container header-flex">
         <div class="logo">
-            <a href="">
+            <a href="/">
                 <img src="https://cdn.jsdelivr.net/gh/leminhut/design5s.net/svg/logo.svg" alt="">
             </a>
         </div>

@@ -5,7 +5,7 @@
             <div class="container">
                 <h2>Connecting more than 1000 stores across the Philippines</h2>
                 <br class="d-none d-lg-block">
-                <h3>Goods Inspection - Wrapping - Shipping, the safest and most standard procedure in the market</h3>
+                <h3>Goods Inspection - Wrapping - Shipping, the safest and most standard procedure</h3>
 {{--                <p></p>--}}
 {{--                <p>Easily search for orders by phone number and store name</p>--}}
                 <a class="btn-registration js-scroll-page" data-id="#search_order_manage" href=""  title="template blogspot">CHECK THE STATUS OF ORDER</a>
