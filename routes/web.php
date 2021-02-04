@@ -18,6 +18,9 @@ Route::get('logout','LoginController@logout')->name('get.logout');
 Route::post('login','LoginController@postLogin');
 Route::get('home','HomeController@index')->name('get.home');
 Route::get('/','HomeController@index')->name('get.home');
+Route::post('search-order-manage','SearchOrderManageController@searchOrderManage')
+    ->name('post_ajax.order_manage');
+
 Route::middleware('checkLoginAdmin')->group(function (){
     Route::get('import-data','ImportDataController@formImport')->name('get.import_data');
     Route::post('import-data','ImportDataController@processImport');

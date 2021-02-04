@@ -10,6 +10,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" />
     <link href="{{ mix('css/guest.css') }}" rel="stylesheet">
+    <script>
+        var URL_SEARCH = '{{ route('post_ajax.order_manage') }}'
+    </script>
 </head>
 <body class="bg-light">
 @include('components._inc_nav_guest')

@@ -1,20 +1,21 @@
 import 'select2'
 import 'owl.carousel'
+import 'jquery-validation'
 
 var GuestHome = {
-    init : function (){
+    init: function () {
         this.scrollTopLink()
         this.initSelect2ShopName()
+        this.processOrderManage()
     },
 
-    scrollTopLink()
-    {
-        $(".js-scroll-page").click( function (event){
+    scrollTopLink() {
+        $(".js-scroll-page").click(function (event) {
             event.preventDefault()
             let $this = $(this)
             let $idBox = $this.attr('data-id')
             $('html, body').animate({
-                scrollTop: $($idBox).offset().top  - 100
+                scrollTop: $($idBox).offset().top - 100
             }, 500);
         })
     },
@@ -25,34 +26,46 @@ var GuestHome = {
         });
     },
 
-    runPartner()
-    {
-        $('#init-partner .owl-carousel').owlCarousel({
-            loop:true,
-            margin:10,
-            nav:false,
-            navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-            navContainer: '#js-owl-feature-job-button',
-            navClass: [ 'owl-style-buttons__btn owl-style-buttons__btn--prev', 'owl-style-buttons__btn owl-style-buttons__btn--next' ],
-            responsive:{
-                0:{
-                    items:2
+    processOrderManage() {
+        $('#formOrderManage').validate({
+            rules: {
+                name_shop: {
+                    required: true,
                 },
-                600:{
-                    items:3
+                code: {
+                    required: true,
                 },
-                1000:{
-                    items:6
+            },
+            messages: {
+                name_shop: {
+                    required: "Please put your name shop.",
+                },
+                code: {
+                    required: "Please put your code.",
                 }
             },
-            autoplay:false,
-            autoplayTimeout:4000,
-            autoplayHoverPause:false
+            submitHandler: function (form) {
+                $.ajax({
+                    url: URL_SEARCH,
+                    method: "POST",
+                    beforeSend: function (xhr) {
+                        $(".js-loading-1").show()
+                    },
+                    data: $('#formOrderManage').serialize(),
+                    success: function (results) {
+                        $("#result-order-manage").html(results)
+                    },
+                    error: function (xhr) {
+                        console.log(xhr)
+                        $(".js-loading-1").hide()
+                    },
+                })
+            }
         });
     }
 }
 
-$(function (){
+$(function () {
     GuestHome.init()
 })
 

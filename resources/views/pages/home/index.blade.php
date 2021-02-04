@@ -123,14 +123,11 @@
                     </div>
                 </div>
                 <div class="right landing-form">
-                    <h3>Nhận ngay tài khoản sau khi đăng ký</h3>
-                    <form id="form-register2" novalidate="novalidate">
-                        <input type="hidden" value="0">
-
+                    <h3>CHECK THE STATUS OF ORDER</h3>
+                    <form id="formOrderManage" novalidate="novalidate" action="" method="POST">
+                        @csrf
                         <div class="form-group">
-                            {{--                        <input type="text" class="form-control"  name="name" data-error="#err-name" maxlength="60" required="required"> <label>Họ tên của bạn</label>--}}
-                            {{--                        <p id="err-name"></p>--}}
-                            <select name="name" id="" class="js-example-basic-single">
+                            <select name="name_shop" id="" class="js-example-basic-single">
                                 <option value="1">Click name shop</option>
                                 <option value="2">Name</option>
                                 <option value="3">Anh Em</option>
@@ -140,13 +137,18 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="phone"  data-error="#err-phone" maxlength="15" required="required"> <label>Số liên hệ</label>
+                            <input type="text" class="form-control" name="code"  required="required"> <label>Code</label>
                             <p id="err-phone"></p>
                         </div>
-                        <div class="text-center"> <button class="btn btn-md btn-blue js-register-employer">Search Order Manage<i class="la la-angle-right"></i> </button> </div>
+                        <div class="text-center">
+                            <button class="btn btn-md btn-blue" type="submit">Search Order Manage<i class="la la-angle-right"></i> </button>
+                        </div>
                     </form>
                 </div>
             </div>
+        </div>
+        <div class="container" id="result-order-manage">
+            @include('components._inc_loading_v1')
         </div>
     </section>
     <section class="partner" id="partner">
